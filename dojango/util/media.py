@@ -3,7 +3,7 @@ from django.conf import settings
 from dojango.conf import settings as dojango_settings
 from django.core.exceptions import ImproperlyConfigured
 from django.utils._os import safe_join
-from django.utils.encoding import force_str
+from django.utils.encoding import smart_str as force_str
 if django_version >= (1, 5, 0):
     from django.conf.urls import patterns
 else:
