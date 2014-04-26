@@ -34,9 +34,16 @@ class Config:
         config_base_url = self.config.get('base_url', '') % \
                           {'BASE_MEDIA_URL':settings.BASE_MEDIA_URL,
                            'BUILD_MEDIA_URL':settings.BUILD_MEDIA_URL}
+
+        # if using a dojoload/dojobuild profile, the version name should include the profile
+        if settings.DOJO_RELEASE_VERSION:
+            version = settings.DOJO_RELEASE_VERSION
+        else:
+            version = self.version
+
         # and putting the complete url together
         return "%(base)s/%(version)s" % {"base":config_base_url,
-            "version":self.version}
+            "version":version}
 
     def get_context_dict(self):
         ret = {}

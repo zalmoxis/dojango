@@ -5,6 +5,8 @@ DEBUG = getattr(settings, "DEBUG", False)
 DEFAULT_CHARSET = getattr(settings, 'DEFAULT_CHARSET', 'utf-8')
 
 DOJO_VERSION = getattr(settings, "DOJANGO_DOJO_VERSION", "1.7.2")
+# if using a dojoload/dojobuild profile, the version name should include the profile
+DOJO_RELEASE_VERSION = getattr(settings, "DOJANGO_DOJO_RELEASE_VERSION", None)
 # NOTE: you have to use "google_xd" for dojo versions < 1.7.0
 DOJO_PROFILE = getattr(settings, "DOJANGO_DOJO_PROFILE", "google")
 
